@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
+bool a[2000][2000]; //인접행렬
+vector<int> g[2000]; //인접리스트
+vector<pair<int, int>> edges; //간선리스트
 int main () {
-    int n, m;
-    bool a[2000][2000]; //인접행렬
-    vector<int> g[2000]; //인접리스트
-    vector<pair<int, int>> edges; //간선리스트
+    int n, m; //n:사람의 수, m:친구관계 수
     for (int i = 0; i < m; i++) {
         int from, to;
         cin >> from >> to;
@@ -15,7 +16,7 @@ int main () {
         g[from].push_back(to);
         g[to].push_back(from);
     }
-    m *= 2;
+    m *= 2; 
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < m; j++) {
             //A -> B
