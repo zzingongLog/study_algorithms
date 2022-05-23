@@ -7,6 +7,7 @@ vector<int> g[2000]; //인접리스트
 vector<pair<int, int>> edges; //간선리스트
 int main () {
     int n, m; //n:사람의 수, m:친구관계 수
+    cin >> n >> m;
     for (int i = 0; i < m; i++) {
         int from, to;
         cin >> from >> to;
