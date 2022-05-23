@@ -17,7 +17,7 @@ int main () {
         g[from].push_back(to);
         g[to].push_back(from);
     }
-    m *= 2; 
+    m *= 2; // *edges에 양방향으로 친구 관계 수가 두배로 들어가기 때문
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < m; j++) {
             //A -> B
