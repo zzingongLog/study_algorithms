@@ -50,13 +50,13 @@ int main () {
             }
         }
         int l = b.size();
-        vector<vector<int>> d(l, vector<int>(l));
+        vector<vector<int>> d(l, vector<int>(l)); //2차원 백터.l개의 원소에서 각 원소(vector)는 l개의 원소를 갖고 있음
         bool ok = true;
-        for (int i = 0; i < l; i++) {
-            auto dist = bfs(a, b[i].first, b[i].second);
-            for (int j = 0; j < l; j++) {
-                d[i][j] = dist[b[j].first][b[j].second];
-                if (d[i][j] == -1) {
+        for (int i = 0; i < l; i++) { //로봇청소기 위치 + 더러운칸 개수
+            auto dist = bfs(a, b[i].first, b[i].second); //각 위치(i)에 bfs를 한다.
+            for (int j = 0; j < l; j++) { 
+                d[i][j] = dist[b[j].first][b[j].second];//d[i][j] : 시작 위치(i)에서 더러운 점(j)까지 최소방문거리 저장 
+                if (d[i][j] == -1) { //방문할 수 없는 경우
                     ok = false;
                 }
             }
